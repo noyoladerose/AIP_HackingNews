@@ -94,7 +94,7 @@ router.post("/login", (req, res) => {
             res.json({ err: err.name });
           }
         });
-        // return res.json({msg: 'login success!.'})
+        
       } else {
         res.status(404).json({ msg: errMSg });
       }
