@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700');
+
+body{
+    background: #f2f2f2;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h3{
+     font-family: 'Josefin Sans', sans-serif;
+}
+
+.box{
+    padding:60px 0px;
+}
+
+.box-part{
+    background:#FFF;
+    border-radius:10px;
+    padding:60px 10px;
+    margin:30px 0px;
+}
+
+
+
+
+
+.text{
+    margin:20px 0px;
+}
+

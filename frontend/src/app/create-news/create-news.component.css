@@ -1,0 +1,27 @@
+.input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group {
+    z-index: 2;
+    margin-left: 20px;
+}
+/* validation form */
+input.ng-invalid.ng-touched{
+	border: 1px solid #df3242 !important;
+}
+
+
+textarea.ng-invalid.ng-touched{
+	border: 1px solid #df3242 !important;
+}
+
+/* */
+
+
+.red{
+    color:red;
+    }
+.form-area
+{
+    background-color: #FAFAFA;
+	padding: 10px 40px 60px;
+	margin: 10px 0px 60px;
+	border: 1px solid GREY;
+	}

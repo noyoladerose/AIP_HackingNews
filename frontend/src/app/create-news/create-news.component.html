@@ -1,0 +1,43 @@
+<div class="container">
+ 
+  <!--  -->
+  <div class="col-md-5">
+    <div class="form-area">
+      <form role="form" #newsData="ngForm" (ngSubmit)="addNews(newsData)" >
+        <br style="clear:both">
+        <h3 style="margin-bottom: 25px; text-align: center;">Add News</h3>
+        <div class="form-group">
+          <input type="text" class="form-control" id="title" name="title" placeholder="title" required ngModel #title="ngModel">
+          <span class="help-block" *ngIf="title.invalid && title.touched">
+            Please enter news title 
+          </span>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="desc" name="desc" placeholder="description" required ngModel #desc="ngModel">
+          <span class="help-block" *ngIf="desc.invalid && desc.touched">
+            Please enter news description news 
+          </span>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="source" name="source" placeholder="source" required ngModel #source="ngModel">
+          <span class="help-block" *ngIf="source.invalid && source.touched">
+            Please enter source 
+          </span>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="url" name="url" placeholder="source url" required ngModel #url="ngModel">
+          <span class="help-block" *ngIf="url.invalid && url.touched">
+            Please enter news url 
+          </span>
+        </div>
+       
+
+        <button type="submit" id="submit" name="submit" class="btn btn-success pull-right" [disabled]="newsData.invalid">Submit</button>
+        <span class="help-block" class="text-primary">
+            {{msgResult}}
+        </span>
+      </form>
+    </div>
+  </div>
+
+</div>
