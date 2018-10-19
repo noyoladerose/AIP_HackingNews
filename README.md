@@ -21,7 +21,6 @@
 # Installation & Setup
 
 1. Install [Node.js] (https://nodejs.org/) and [MongoDB](https://www.mongodb.org/) of you have not installed
-
 2. Clone this repository and install its dependencies, git clone https://github.com/noyoladerose/AIP_HackingNews
 
 	
@@ -37,7 +36,9 @@
 2. Back end - `node server.js` or `nodemon server.js`
 
 
-# Open the browser and navigate to the link [http://localhost:4200/]
+# Open the browser
+
+1. Navigate to the link [http://localhost:4200/]
 
 
 
