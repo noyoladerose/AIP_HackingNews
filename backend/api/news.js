@@ -33,18 +33,18 @@ router.get("/news", (req, res, next) => {
 Access: private
 */
 
-router.post("/",passport.authenticate('jwt',{session:false}), (req, res, next) => {
+router.post("/", passport.authenticate('jwt', { session: false }), (req, res, next) => {
   const news = new News({
     _id: new mongoose.Types.ObjectId(),
     title: req.body.title,
     desc: req.body.desc,
     source: req.body.source,
-    url:req.body.url
+    url: req.body.url
 
 
   });
 
-// validate the input
+  // validate the input
   const validSchema = {
     title: Joi.string().required(),
     desc: Joi.string().required(),
@@ -52,33 +52,32 @@ router.post("/",passport.authenticate('jwt',{session:false}), (req, res, next) =
     url: Joi.string().required()
 
   }
-  const isValid = Joi.validate(req.body,validSchema);
-  if(isValid.error === null){
+  const isValid = Joi.validate(req.body, validSchema);
+  if (isValid.error === null) {
     news
-    .save()
-    .then(result => {
-      if (result !== null) {
-        res.status(200).json({
-          message: "add a News done."
-        });
-      }
-     
-       
-    })
-    .catch(err => {
-      console.log('add a News failed - ', err);
-      res.status(500).json({
-        error: err
-      });
-    });
+      .save()
+      .then(result => {
+        if (result !== null) {
+          res.status(200).json({
+            message: "add a News done."
+          });
+        }
 
-  }else{
-    console.log('add a news  failed - ',isValid.error.details[0].message);
+      })
+      .catch(err => {
+        console.log('add a News failed - ', err);
+        res.status(500).json({
+          error: err
+        });
+      });
+
+  } else {
+    console.log('add a news  failed - ', isValid.error.details[0].message);
     res.status(500).json({
       error: isValid.error.details[0].message
     });
   }
- 
+
 });
 
 module.exports = router;

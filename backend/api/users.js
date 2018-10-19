@@ -9,7 +9,6 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 //secret key as a salt for generating token
 const key = require("../config/keys");
-
 const User = require("../models/user");
 
 /*
@@ -31,7 +30,7 @@ router.post("/register", (req, res) => {
       if (user) {
         return res
           .status(400)
-          .json({ msg: "Email already exists.\n Please enter new email." });
+          .json({ msg: "Email already exists.\n Please enter a different email." });
       } else {
         const newUser = new User({
           _id: new mongoose.Types.ObjectId(),
